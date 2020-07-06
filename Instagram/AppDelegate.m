@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
+#import "HomeStreamViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,11 +21,13 @@
     // Override point for customization after application launch.
     ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         
-        configuration.applicationId = @"codepathInstagram";
-        configuration.server = @"http://codepathfbinstagram.herokuapp.com/parse";
+        configuration.applicationId = @"instaDT";
+        configuration.server = @"http://instagramDT.herokuapp.com/parse";
     }];
     
     [Parse initializeWithConfiguration:config];
+    
+    
     PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
     gameScore[@"score"] = @1337;
     gameScore[@"playerName"] = @"Sean Plott";
@@ -38,8 +41,9 @@
     }];
     
     return YES;
+    
+    
 }
-
 
 #pragma mark - UISceneSession lifecycle
 
