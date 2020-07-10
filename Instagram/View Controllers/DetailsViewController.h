@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailsViewController : UIViewController
 @property(nonatomic, strong) Post *tapPost;
-
-
 @end
 
 NS_ASSUME_NONNULL_END
