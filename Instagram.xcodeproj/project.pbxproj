@@ -19,6 +19,8 @@
 		CC65F5CE24B26799005A030B /* InstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC65F5CD24B26799005A030B /* InstagramTests.m */; };
 		CC65F5D924B26799005A030B /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC65F5D824B26799005A030B /* InstagramUITests.m */; };
 		CC67806424B51C04008B4718 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = CC67806324B51C04008B4718 /* Post.m */; };
+		CC67806C24B62B88008B4718 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC67806B24B62B88008B4718 /* PostCell.m */; };
+		CC9DB5B424B789F4002BDCCA /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9DB5B324B789F4002BDCCA /* DetailsViewController.m */; };
 		CCC15D1724B3BF2E00899B96 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC15D1624B3BF2E00899B96 /* LoginViewController.m */; };
 		CCC15D1A24B3C50200899B96 /* HomeStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC15D1924B3C50200899B96 /* HomeStreamViewController.m */; };
 		CCC15D1D24B4E0B400899B96 /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC15D1C24B4E0B400899B96 /* CreatePostViewController.m */; };
@@ -66,6 +68,10 @@
 		CC65F5DA24B26799005A030B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC67806224B51C04008B4718 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		CC67806324B51C04008B4718 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		CC67806A24B62B88008B4718 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		CC67806B24B62B88008B4718 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		CC9DB5B224B789F4002BDCCA /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		CC9DB5B324B789F4002BDCCA /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		CCC15D1524B3BF2E00899B96 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CCC15D1624B3BF2E00899B96 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CCC15D1824B3C50200899B96 /* HomeStreamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeStreamViewController.h; sourceTree = "<group>"; };
@@ -196,6 +202,8 @@
 				CCC15D1924B3C50200899B96 /* HomeStreamViewController.m */,
 				CCC15D1B24B4E0B400899B96 /* CreatePostViewController.h */,
 				CCC15D1C24B4E0B400899B96 /* CreatePostViewController.m */,
+				CC9DB5B224B789F4002BDCCA /* DetailsViewController.h */,
+				CC9DB5B324B789F4002BDCCA /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -203,6 +211,8 @@
 		CCC15D1324B3BE7B00899B96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC67806A24B62B88008B4718 /* PostCell.h */,
+				CC67806B24B62B88008B4718 /* PostCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -457,8 +467,10 @@
 				CCC15D1D24B4E0B400899B96 /* CreatePostViewController.m in Sources */,
 				CCC15D1A24B3C50200899B96 /* HomeStreamViewController.m in Sources */,
 				CCC15D1724B3BF2E00899B96 /* LoginViewController.m in Sources */,
+				CC67806C24B62B88008B4718 /* PostCell.m in Sources */,
 				CC65F5B324B26798005A030B /* AppDelegate.m in Sources */,
 				CC65F5C424B26799005A030B /* main.m in Sources */,
+				CC9DB5B424B789F4002BDCCA /* DetailsViewController.m in Sources */,
 				CC65F5B624B26798005A030B /* SceneDelegate.m in Sources */,
 				CC67806424B51C04008B4718 /* Post.m in Sources */,
 			);
