@@ -24,6 +24,11 @@
     newUser.username = self.usernameTextField.text;
     newUser.password = self.passwordTextField.text;
     [newUser signUpInBackground];
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        if (error == nil){
+            [self performSegueWithIdentifier:@"homeStreamSegue" sender:nil];
+        }
+    }];
 }
 
 - (IBAction)didTapLogin:(id)sender {

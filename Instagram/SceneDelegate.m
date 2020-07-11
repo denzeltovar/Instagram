@@ -21,7 +21,7 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     if (PFUser.currentUser) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"HomeStreamNavigationController"];
+        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"InstagramTabBarViewController"];
         self.window.rootViewController = navigationController;
     }
 }

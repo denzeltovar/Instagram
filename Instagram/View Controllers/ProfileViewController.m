@@ -1,38 +1,41 @@
 //
-//  CreatePostViewController.m
+//  ProfileViewController.m
 //  Instagram
 //
-//  Created by denzeltov on 7/7/20.
+//  Created by denzeltov on 7/10/20.
 //  Copyright © 2020 denzeltov. All rights reserved.
 //
 
-#import "CreatePostViewController.h"
-#import"HomeStreamViewController.h"
-#import <Parse/Parse.h>
-#import "SceneDelegate.h"
-#import"Post.h"
+#import "ProfileViewController.h"
+#import "UIImageView+AFNetworking.h"
+# import <Parse/Parse.h>
+#import"CreatePostViewController.h"
 
-@interface CreatePostViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *composeImageView;
-@property (weak, nonatomic) IBOutlet UITextField *captionTextField;
+
+
+@import Parse;
+@interface ProfileViewController ()
+@property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+
 @end
 
-@implementation CreatePostViewController
+@implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     [self presentViewController:imagePickerVC animated:YES completion:nil];
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
+    self.usernameLabel.text = [PFUser currentUser].username;
+
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
@@ -49,25 +52,17 @@
     return newImage;
 }
 
-- (IBAction)didTapPost:(id)sender {
-    [Post postUserImage:self.composeImageView.image withCaption:self.captionTextField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error){
-        if (error == nil){
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
-    }];
-    
-}
-- (IBAction)didTapCancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)tapToUpdateProfile:(id)sender {
+    [Post postUserImage:self.profileImageView.image withCaption:self.descriptionLabel.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {}];
+
 }
 
-#pragma Mark - Delegate MEthods
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
-    self.composeImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(414, 414)];
+    self.profileImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(414, 414)];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

@@ -13,6 +13,8 @@
 #import "PostCell.h"
 #import "Post.h"
 #import "DetailsViewController.h"
+#import "NSDate+DateTools.h"
+@import Parse;
 
 @interface HomeStreamViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -31,24 +33,14 @@
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+
+    [self fetchPosts];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     
     [self.tableView insertSubview:self.refreshControl atIndex:0];
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    query.limit = 20;
-    [query includeKey:@"author"];
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-        if (posts != nil) {
-            self.posts = (NSMutableArray *) posts;
-            NSLog(@"%@", self.posts);
-            [self.tableView reloadData];
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
 }
 
 -(void)fetchPosts {
@@ -66,11 +58,14 @@
 }
 
 - (IBAction)didTapLogout:(id)sender {
-    SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    sceneDelegate.window.rootViewController = loginViewController;
-    [PFUser logOutInBackground];
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        if (error == nil){
+            SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+            sceneDelegate.window.rootViewController = loginViewController;
+        }
+    }];
 }
 
 - (IBAction)didTapCreatePost:(id)sender {
@@ -81,6 +76,9 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.posts[indexPath.row];
     cell.captionLabel.text = post.caption;
+    cell.usernameLabel.text = [PFUser currentUser].username;
+    cell.timeStampLabel.text = post.createdAt.shortTimeAgoSinceNow;
+    
     [cell setPost:post];
     
     return cell;
