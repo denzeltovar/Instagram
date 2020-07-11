@@ -1,29 +1,29 @@
-# Project 4 - *Name of App Here*
+# Project 4 - *Instagram App*
 
-**Name of your app** is a photo sharing app using Parse as its backend.
+**Instagram* is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **20** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] User can sign up to create a new account using Parse authentication
-- [ ] User can log in and log out of his or her account
-- [ ] The current signed in user is persisted across app restarts
-- [ ] User can take a photo, add a caption, and post it to "Instagram"
-- [ ] User can view the last 20 posts submitted to "Instagram"
-- [ ] User can pull to refresh the last 20 posts submitted to "Instagram"
-- [ ] User can tap a post to view post details, including timestamp and caption.
+- [x] User can sign up to create a new account using Parse authentication
+- [x] User can log in and log out of his or her account
+- [x] The current signed in user is persisted across app restarts
+- [x] User can take a photo, add a caption, and post it to "Instagram"
+- [x] User can view the last 20 posts submitted to "Instagram"
+- [x] User can pull to refresh the last 20 posts submitted to "Instagram"
+- [x] User can tap a post to view post details, including timestamp and caption.
 
 The following **optional** features are implemented:
 
-- [ ] Run your app on your phone and use the camera to take the photo
-- [ ] Style the login page to look like the real Instagram login page.
-- [ ] Style the feed to look like the real Instagram feed.
-- [ ] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user. AKA, tabs for Home Feed and Profile
+- [x] Run your app on your phone and use the camera to take the photo
+- [x] Style the login page to look like the real Instagram login page.
+- [x] Style the feed to look like the real Instagram feed.
+- [x] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user. AKA, tabs for Home Feed and Profile
 - [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
-- [ ] Show the username and creation time for each post
+- [x] Show the username and creation time for each post
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
 - User Profiles:
   - [ ] Allow the logged in user to add a profile photo
@@ -39,14 +39,16 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Better ways to implement the Parse Database. Not that I had trouble with but to to learn more features that we can incorporate in our app.
+2.Features they are going to implmemnt into their own app and feedback on what can be improved on my app idea.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/xnyYID6vpH.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/dXDBbeBZuB.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/Nu7D3a3Sgh.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -55,15 +57,18 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [UIImageView+AFNetworking.]
+- [Parse]
 
 
 ## Notes
-
-Describe any challenges encountered while building the app.
+This week went by a lot smoother than the previous week although their are still things I need to imrove on. Such as being consistant in 
+editing my code while making progress, being more on top of my commit and pushes to github, and continue improving on the skills 
+I developed as their is still room for imrovement.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [1997] [Denzel Tovar]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
